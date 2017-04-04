@@ -2869,57 +2869,42 @@ end TCL_Generic;&#13;
     <a name="circuitnamedbox" val="true"/>
     <a name="circuitvhdlpath" val=""/>
     <wire from="(80,60)" to="(80,110)"/>
+    <wire from="(140,130)" to="(230,130)"/>
+    <wire from="(130,160)" to="(140,160)"/>
+    <wire from="(320,110)" to="(350,110)"/>
     <wire from="(80,60)" to="(90,60)"/>
-    <wire from="(80,110)" to="(280,110)"/>
-    <wire from="(70,140)" to="(90,140)"/>
-    <wire from="(230,220)" to="(250,220)"/>
-    <wire from="(230,160)" to="(230,220)"/>
+    <wire from="(80,110)" to="(230,110)"/>
+    <wire from="(140,130)" to="(140,160)"/>
+    <comp lib="0" loc="(110,50)" name="Constant">
+      <a name="facing" val="west"/>
+      <a name="value" val="0x0"/>
+    </comp>
     <comp lib="0" loc="(90,60)" name="Splitter">
-      <a name="fanout" val="8"/>
-      <a name="incoming" val="8"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
       <a name="appear" val="center"/>
     </comp>
-    <comp loc="(620,110)" name="Add_8bit"/>
-    <comp lib="0" loc="(70,140)" name="Pin">
-      <a name="width" val="4"/>
-      <a name="label" val="PCIn"/>
-      <a name="labelloc" val="north"/>
+    <comp lib="0" loc="(110,40)" name="Constant">
+      <a name="facing" val="west"/>
     </comp>
-    <comp lib="0" loc="(250,220)" name="Pin">
+    <comp lib="0" loc="(350,110)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
       <a name="width" val="4"/>
       <a name="label" val="PCOut"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(110,40)" name="Constant">
+    <comp lib="0" loc="(110,60)" name="Constant">
       <a name="facing" val="west"/>
       <a name="value" val="0x0"/>
     </comp>
-    <comp lib="0" loc="(110,50)" name="Constant">
-      <a name="facing" val="west"/>
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(110,30)" name="Constant">
-      <a name="facing" val="west"/>
-      <a name="value" val="0x0"/>
+    <comp loc="(320,110)" name="Add_4bit"/>
+    <comp lib="0" loc="(130,160)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="label" val="PCIn"/>
+      <a name="labelloc" val="north"/>
     </comp>
     <comp lib="0" loc="(110,70)" name="Constant">
-      <a name="facing" val="west"/>
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(110,80)" name="Constant">
-      <a name="facing" val="west"/>
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(110,90)" name="Constant">
-      <a name="facing" val="west"/>
-      <a name="value" val="0x0"/>
-    </comp>
-    <comp lib="0" loc="(110,20)" name="Constant">
-      <a name="facing" val="west"/>
-    </comp>
-    <comp lib="0" loc="(110,60)" name="Constant">
       <a name="facing" val="west"/>
       <a name="value" val="0x0"/>
     </comp>
