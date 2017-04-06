@@ -1,1 +1,46 @@
-placeholder
+ENGLISH:
+
+INP R2 # R2 recieves keypad input
+LD R1, $t3 # R1 set to 0
+
+$t2:
+  BEQ R2, R1, $t1 #if R2 = 0 exit loop
+  LD R1, $t0 # R1 = value at $t0
+  ADD R1, R1 $ # R1 = R1 + R1
+  STR R1, $t0 # store R1 at $t0
+  LD R1, $t3 # R1 set to 1
+  SUB R2, R1 # R2 = R2 - 1
+  SUB R1, R1 # R1 set to 0
+  BEQ R1, R1, $t2 #loop 
+
+$t1:
+  PRINT R1
+  STOP
+
+$t3:
+   1
+
+—————————————
+
+BINARY:
+
+1011 R2 # R2 recieves keypad input
+011x R1, $t3 # R1 set to 0
+
+$t2:
+  0100 R2, R1, $t1 #if R2 = 0 exit loop
+  011x R1, $t0 # R1 = value at $t0
+  0010 R1, R1 $ # R1 = R1 + R1
+  100x R1, $t0 # store R1 at $t0
+  011x R1, $t3 # R1 set to 1
+  0011 R2, R1 # R2 = R2 - 1
+  0011 R1, R1 # R1 set to 0
+  0100 R1, R1, $t2 #loop 
+
+$t1:
+  PRINT R1
+  STOP
+
+$t3:
+   1
+
