@@ -1,20 +1,28 @@
-We have a counter system that cycles through 0 to 8. At the start, it is at 0, and the first tick causes it to be 1. We designate a function at each of those ticks so we may pass data properly.
+We have a counter system that cycles through 0 to 15. At the start, it is at 0, and the first tick causes it to be 1. We designate a function at each of those ticks so we may pass data properly.
+For our convenience, we will show the operations for ticks 1 to 16. Every other tick is solely to pass data through bits.
 
 1. PC sends address to RAM
-2. RAM reads data and sends it to MBR. As this is our instruction, it is saved in the IR.
-3. Keypad data gets send to the MBR.
-4. CPU sends the address (last 4 bits of instruction). This will be used for load/store, but is otherwise useless. The first four bits in the data will hold the following:
+tick
+3. RAM reads data and sends it to MBR.
+tick
+5. Keypad data gets sent to the MBR. Old MBR data sent to instruction.
+tick
+7. CPU sends the address (last 4 bits of instruction). This will be used for load/store, but is otherwise useless. The first four bits in the data will hold the following:
 	* Is the OP code store
 	* Is the OP code print	
 	* Is the OP code stop
 	* Is there an error in the ALU operation
 	This data will be passed to the RAM, Display, and the Reset toggle
-5. RAM outputs the data at the address it was previously given. Depending on our instruction, we may choose to save it.
-6. CPU outputs data for RAM to write at its current address. If the bit at #4 was write, RAM will save it.
-7. CPU outputs data to display. If the second bit at #4 was 1, the display will show it.
+tick
+9. RAM outputs the data at the address it was previously given. Depending on our instruction, we may choose to save it.
+tick
+11. CPU outputs data for RAM to write at its current address. If the bit at #4 was write, RAM will save it.
+tick
+13. CPU outputs data to display. If the second bit at #4 was 1, the display will show it.
+tick
 
 Concurrently, the following will happen during certain ticks:
 
-6. We have both the instruction and the new data, so it may be saved into registers if we need it.
-7. We have all our data where we need it to be, so ALU operations may be executed.
-8. PC will increment if there is no jumping, or set itself to the address to jump to.
+11. We have both the instruction and the new data, so it may be saved into registers if we need it.
+13. We have all our data where we need it to be, so ALU operations may be executed.
+15. PC will increment if there is no jumping, or set itself to the address to jump to.
