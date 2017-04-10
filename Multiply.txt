@@ -1,46 +1,19 @@
-ENGLISH:
+Machine code for multiplication:
 
-INP R2 # R2 recieves keypad input
-LD R1, $t3 # R1 set to 0
-
-$t2:
-  BEQ R2, R1, $t1 #if R2 = 0 exit loop
-  LD R1, $t0 # R1 = value at $t0
-  ADD R1, R1 $ # R1 = R1 + R1
-  STR R1, $t0 # store R1 at $t0
-  LD R1, $t3 # R1 set to 1
-  SUB R2, R1 # R2 = R2 - 1
-  SUB R1, R1 # R1 set to 0
-  BEQ R1, R1, $t2 #loop 
-
-$t1:
-  PRINT R1
-  STOP
-
-$t3:
-   1
-
-—————————————
-
-BINARY:
-
-1011 R2 # R2 recieves keypad input
-011x R1, $t3 # R1 set to 0
-
-$t2:
-  0100 R2, R1, $t1 #if R2 = 0 exit loop
-  011x R1, $t0 # R1 = value at $t0
-  0010 R1, R1 $ # R1 = R1 + R1
-  100x R1, $t0 # store R1 at $t0
-  011x R1, $t3 # R1 set to 1
-  0011 R2, R1 # R2 = R2 - 1
-  0011 R1, R1 # R1 set to 0
-  0100 R1, R1, $t2 #loop 
-
-$t1:
-  PRINT R1
-  STOP
-
-$t3:
-   1
+00000001 # to decrement with
+0010 1101 # test input in RAM (e.g. 45)
+1100 0000 #button input
+0110 0001 #R1 = addr1(test input) #begin while
+0111 0001 #R2 = addr 1 (test input)
+0011 0000 $ # R1 = R1 + R2 
+1000 0011 # store R1 at addr 3
+0110 0010 # R1 set to addr(2)
+0111 0000 # R2 set to addr(0)
+0010 0000 # R1 = R1 - R2 
+1000 0010 # store R1 at addr(2)
+0111  1111 # R2 set to addr 15 (0)
+0101 0011 #loop to addr(3) if R1 != 0 #end while
+0111 0010 #R1 set to addr(2)
+1010 0000 #print R1
+0000 0000 #stop
 
