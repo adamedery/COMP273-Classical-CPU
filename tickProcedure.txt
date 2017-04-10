@@ -23,6 +23,6 @@ tick
 
 Concurrently, the following will happen during certain ticks:
 
-11. We have both the instruction and the new data, so it may be saved into registers if we need it.
-13. We have all our data where we need it to be, so ALU operations may be executed.
+11. We have all our data where we need it to be, so ALU operations may be executed.
+13. We have both the instruction and the new data, so it may be saved into registers if we need it.
 15. PC will increment if there is no jumping, or set itself to the address to jump to.
