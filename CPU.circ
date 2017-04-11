@@ -608,7 +608,7 @@ end TCL_Generic;&#13;
     <comp lib="0" loc="(1410,210)" name="Clock">
       <a name="facing" val="south"/>
     </comp>
-    <comp loc="(300,530)" name="ROM_Mult"/>
+    <comp loc="(300,530)" name="ROM_bonus"/>
     <comp lib="0" loc="(450,730)" name="Probe">
       <a name="facing" val="west"/>
     </comp>
@@ -2153,8 +2153,8 @@ end TCL_Generic;&#13;
       <a name="size" val="20"/>
     </comp>
   </circuit>
-  <circuit name="ROM_Mult">
-    <a name="circuit" val="ROM_Mult"/>
+  <circuit name="ROM_bonus">
+    <a name="circuit" val="ROM_bonus"/>
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif bold 16"/>
@@ -2293,7 +2293,7 @@ end TCL_Generic;&#13;
     </comp>
     <comp lib="0" loc="(250,360)" name="Constant">
       <a name="width" val="8"/>
-      <a name="value" val="0xe1"/>
+      <a name="value" val="0x7"/>
     </comp>
     <comp lib="0" loc="(290,520)" name="Pin">
       <a name="facing" val="west"/>
