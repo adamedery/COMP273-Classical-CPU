@@ -1,0 +1,37 @@
+Machine code for multiplication using addition:
+
+1101 0000	# load input -> r1
+0101 0111	# bne -> #7 (note that r0 = firstCycle ? 0 : input)
+0000 0000	# stop 
+0000 0000	# [data] sum 
+xxxx xxxx	# [data] val 
+0000 0000	# [data] counter
+0000 0001	# [data] one 
+0110 0011	# load sum -> r0
+0111 0100	# load val -> r1
+0011 0000	# add sum + val 
+1010 0000	# prt sum (r0)
+1000 0011	# store sum (r0) 
+0110 0101	# load counter -> r0
+0111 0110	# load one -> r1
+0011 0000	# add counter + one 
+1000 0101	# store counter (r0)
+
+
+1. load input -> r1
+2. bne (loop)
+3. stop
+4. [sum]
+5. [val]
+6. [counter]
+7. [one]
+8. load sum -> r0 (loop)
+9. load val -> r1 
+10. sum + val -> r0 
+11. display r0
+12. str sum -> [sum]
+13. load counter -> r0 
+14. load one -> r1
+15. counter + one -> r0 
+16. str counter -> [counter]
+
