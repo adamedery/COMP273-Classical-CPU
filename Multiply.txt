@@ -1,6 +1,6 @@
 Machine code for multiplication:
 
-00000001 # to decrement with
+0000 0001 # to decrement with
 0010 1101 # test input in RAM (e.g. 45)
 1100 0000 #button input
 0110 0001 #R1 = addr1(test input) #begin while
@@ -11,7 +11,7 @@ Machine code for multiplication:
 0111 0000 # R2 set to addr(0)
 0010 0000 # R1 = R1 - R2 
 1000 0010 # store R1 at addr(2)
-0111  1111 # R2 set to addr 15 (0)
+0111 1111 # R2 set to addr 15 (0)
 0101 0011 #loop to addr(3) if R1 != 0 #end while
 0111 0010 #R1 set to addr(2)
 1010 0000 #print R1
